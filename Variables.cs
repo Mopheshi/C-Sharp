@@ -70,7 +70,7 @@
         Console.WriteLine("Pi Type: " + pi.GetType());
         Console.WriteLine("Circumference: " + (pi * 3));
         Console.WriteLine("\nFirst Name: " + Days.Sat);
-        Console.WriteLine("\n1ST Index: " + (int)Days.Sat)
+        Console.WriteLine("1st Index: " + (int)Days.Sat);
         string name = Enum.GetName(daysType, 1);
         Console.WriteLine("\n2nd Index: " + name);
         bool flag = Enum.IsDefined(daysType, "Mon");
