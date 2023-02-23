@@ -63,18 +63,32 @@
         //Console.WriteLine("Datatyoe if num variable is : " + num.GetType().ToString());
         //Console.ReadKey();
 
-        Console.Title = "Constant";
+        //Console.Title = "Constant";
 
-        const double pi = 3.14159265358979;
-        var daysType = typeof(Days);
-        Console.WriteLine("Pi Type: " + pi.GetType());
-        Console.WriteLine("Circumference: " + (pi * 3));
-        Console.WriteLine("\nFirst Name: " + Days.Sat);
-        Console.WriteLine("1st Index: " + (int)Days.Sat);
-        string name = Enum.GetName(daysType, 1);
-        Console.WriteLine("\n2nd Index: " + name);
-        bool flag = Enum.IsDefined(daysType, "Mon");
-        Console.WriteLine("Contains 'Mon'?: " + flag);
+        //const double pi = 3.14159265358979;
+        //var daysType = typeof(Days);
+        //Console.WriteLine("Pi Type: " + pi.GetType());
+        //Console.WriteLine("Circumference: " + (pi * 3));
+        //Console.WriteLine("\nFirst Name: " + Days.Sat);
+        //Console.WriteLine("1st Index: " + (int)Days.Sat);
+        //string name = Enum.GetName(daysType, 1);
+        //Console.WriteLine("\n2nd Index: " + name);
+        //bool flag = Enum.IsDefined(daysType, "Mon");
+        //Console.WriteLine("Contains 'Mon'?: " + flag);
+        //Console.ReadKey();
+
+        Console.Title = "Arithmetic";
+
+        int a = 8; int b = 4;
+        Console.WriteLine("Addition:\t: " + (a + b));
+        Console.WriteLine("Subtraction:\t: " + (a - b));
+        Console.WriteLine("Multiplication:\t: " + (a * b));
+        Console.WriteLine("Division:\t: " + (a / b));
+        Console.WriteLine("Modulus:\t: " + (a % b));
+        Console.WriteLine("\nPostfix:\t: " + (a++));
+        Console.WriteLine("Postfix Result:\t: " + a);
+        Console.WriteLine("\nPrefix:\t\t: " + (++b));
+        Console.WriteLine("Prefix Result:\t: " + b);
         Console.ReadKey();
     }
 }
