@@ -1,4 +1,6 @@
-﻿internal class Variables
+﻿using System.Reflection.Metadata.Ecma335;
+
+internal class Variables
 {
     //enum Days { Sat, Sun, Mon, Tue, Wed, Thur, Fri }
 
@@ -128,7 +130,7 @@
 
 
 
-        //Console.Title = "Assign";
+        //Console.Title = "Assignment";
 
         //int a, b;
 
@@ -213,21 +215,168 @@
 
 
 
-        Console.Title = "Precedence";
+        //Console.Title = "Precedence";
 
-        int sum;
+        //int sum;
 
-        sum = 1 + 4 * 3;
-        Console.WriteLine("Default Order: 1 + 4 * 3\t=\t" + sum);
+        //sum = 1 + 4 * 3;
+        //Console.WriteLine("Default Order: 1 + 4 * 3\t=\t" + sum);
 
-        sum = (1 + 4) * 3;
-        Console.WriteLine("Forced Order: (1 + 4) * 3\t=\t" + sum);
+        //sum = (1 + 4) * 3;
+        //Console.WriteLine("Forced Order: (1 + 4) * 3\t=\t" + sum);
 
-        sum = 7 - 4 + 2;
-        Console.WriteLine("Default Direction: 7 - 4 + 2\t=\t" + sum);
+        //sum = 7 - 4 + 2;
+        //Console.WriteLine("Default Direction: 7 - 4 + 2\t=\t" + sum);
 
-        sum = 7 - (4 + 2);
-        Console.WriteLine("Forced Direction: 7 - (4 + 2)\t=\t" + sum);
+        //sum = 7 - (4 + 2);
+        //Console.WriteLine("Forced Direction: 7 - (4 + 2)\t=\t" + sum);
+        //Console.ReadKey();
+
+
+
+        //Console.Title = "If Else";
+
+        //Console.WriteLine("Please enter a number: ");
+        //double num = Convert.ToDouble(Console.ReadLine());
+        //if (num > 5)
+        //{
+        //    Console.WriteLine("Number is greater than 5.");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("Number is less than or equal to 5.");
+        //}
+
+        //Console.WriteLine("Please type a letter: ");
+        //char letter = Convert.ToChar(Console.ReadLine());
+        //if (!letter.Equals(null))
+        //{
+        //    Console.WriteLine("You typed " + letter);
+        //}
+        //else
+        //{
+        //    Console.WriteLine("You didn't type anything.");
+        //}
+
+        //Console.ReadKey();
+
+
+
+        //Console.Title = "Switch";
+
+        //int num = 6;
+        //string day;
+
+        //switch (num)
+        //{
+        //    case 1:
+        //        day = "Monday";
+        //        break;
+        //    case 2:
+        //        day = "Tuesday";
+        //        break;
+        //    case 3:
+        //        day = "Wednesday";
+        //        break;
+        //    case 4:
+        //        day = "Thursday";
+        //        break;
+        //    case 5:
+        //        day = "Friday";
+        //        break;
+        //    default:
+        //        day = "Weekend";
+        //        break;
+        //}
+        //Console.WriteLine("Day " + num + " : " + day);
+        //Console.ReadKey();
+
+
+
+        //Console.Title = "For Loop";
+
+        //for (int i = 1; i <= 10; i++)
+        //{
+        //    Console.WriteLine("Iteration: " + i);
+        //}
+        //Console.ReadKey();
+
+
+
+        //Console.Title = "While Loop";
+
+        //Infinite loop...
+        //int i = 0;
+        //while (true)
+        //{
+        //    Console.WriteLine(i);
+        //    i++;
+        //}
+
+        //int[] nums = new int[10];
+        //int i = 0;
+        //while (i < nums.Length)
+        //{
+        //    nums[i] = i;
+        //    Console.Write("|" + nums[i] + "|");
+        //    i++;
+        //}
+        //Console.WriteLine("\n");
+
+        //do
+        //{
+        //    i--;
+
+        //    if (i == 8)
+        //    {
+        //        Console.Write("Skipped!");
+        //        continue;
+        //    }
+        //    if (i == 3)
+        //    {
+        //        Console.Write("Done!");
+        //        break;
+        //    }
+        //    Console.Write("|" + nums[i] + "|");
+        //} while (i > 0);
+        //Console.ReadKey();
+
+
+
+        //Console.Title = "For Each Loop";
+
+        //string[] websites = new string[5] { "Google", "YouTube", "Facebook", "Baidu", "Yahoo!" };
+
+        //Console.WriteLine("Popular Websites:");
+        //int i = 1;
+        //foreach (string site in websites)
+        //{
+        //    Console.WriteLine(i + ". " + site);
+        //    i++;
+        //}
+        //Console.ReadKey();
+
+
+
+        Console.Title = "Key Value Pair";
+
+        Dictionary<string, string> bookList = new Dictionary<string, string>();
+
+        bookList.Add("Stuart Yarnold", "Arduino");
+        bookList.Add("Ndachimya Edward", "Morpheus Softwares");
+        bookList.Add("Nick Vandome", "Windows 10");
+        bookList.Add("Mike McGrath", "Java");
+        bookList.Remove("Ndachimya Edward");
+        Console.WriteLine("Popular Titles:");
+        foreach (KeyValuePair<string, string> book in bookList)
+        {
+            Console.WriteLine("Key: " + book.Key + "\tValue: " + book.Value + " in easy steps");
+        }
         Console.ReadKey();
+
+
+
+        //Console.Title = "";
+        //Console.ReadKey();
     }
 }
