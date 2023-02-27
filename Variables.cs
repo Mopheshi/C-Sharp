@@ -26,13 +26,38 @@
 
 
 
-        Console.Title = "Refactor";
-        computeFactorials(1, 10);
+        //Console.Title = "Refactor";
+        //computeFactorials(1, 10);
+
+
+        Console.Title = "Features";
+        Console.WriteLine("Please type something: ");
+        string text = Console.ReadLine();
+        if (String.IsNullOrWhiteSpace(text))
+        {
+            Console.WriteLine("Error: No text found...");
+        }
+        else
+        {
+            Console.WriteLine("You typed: " + text);
+            Console.WriteLine(text + " has " + text.Length + " characters!");
+        }
+
+        string query = text.StartsWith("C#") ? " does " : " doesn't ";
+        Console.WriteLine("Text" + query + "start with C#.");
+
+        query = text.EndsWith("steps") ? " does " : " doesn't ";
+        Console.WriteLine("Text" + query + "end with steps.");
+
+        query = text.Contains("easy") ? " does " : " doesn't ";
+        Console.WriteLine("Text" + query + "contains easy.");
 
 
         //Console.Title = "";
         //Console.ReadKey();
     }
+
+
 
     static void computeFactorials(int num, int max)
     {
