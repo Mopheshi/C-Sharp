@@ -1,16 +1,77 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-internal class Variables
+﻿internal class Variables
 {
     //enum Days { Sat, Sun, Mon, Tue, Wed, Thur, Fri }
 
     private static void Main(string[] args)
     {
-        double weight; string num;
+        //Console.Title = "Methods";
+        //double weight; string num;
 
-        num = getWeight(out weight);
+        //num = getWeight(out weight);
+        //Console.WriteLine(num + "lb = " + lbToKg(weight) + "kg");
+        //kgToLb(ref weight);
+        //Console.WriteLine(num + "kg = " + weight + "lb");
+        //Console.WriteLine(num + "kg = " + weight + "lb");
+
+        //double num, area;
+
+        //Console.WriteLine("Please enter dimension in feet: ");
+        //num = Convert.ToDouble(Console.ReadLine());
+        //area = computeArea(num);
+        //Console.WriteLine("Circle:\t\tArea = " + area + "sq.ft.");
+        //area = computeArea(num, num);
+        //Console.WriteLine("Square:\t\tArea = " + area + "sq.ft.");
+        //area = computeArea(num, num, 'T');
+        //Console.WriteLine("Triangle:\tArea = " + area + "sq.ft.");
+
+
+
+        Console.Title = "Refactor";
+        computeFactorials(1, 10);
+
+
         //Console.Title = "";
         //Console.ReadKey();
+    }
+
+    static void computeFactorials(int num, int max)
+    {
+        while (num <= max)
+        {
+            Console.WriteLine("Factorial of " + num + " is = " + factorial(num));
+            num++;
+        }
+    }
+
+    static int factorial(int x)
+    {
+        //int result;
+        //if (x == 1)
+        //{
+        //    result = 1;
+        //}
+        //else
+        //{
+        //    result = (factorial(x - 1) * x);
+        //}
+        //return result;
+        return (x == 1) ? 1 : (factorial(x - 1) * x);
+    }
+
+    static double computeArea(double width, double height, char letter)
+    {
+        return ((width / 2) * height);
+    }
+
+    static double computeArea(double width, double height)
+    {
+        return (width * height);
+    }
+
+    static double computeArea(double width)
+    {
+        double radius = width / 2;
+        return ((radius * radius) * 3.141593);
     }
 
     static void kgToLb(ref double weight)
@@ -18,7 +79,7 @@ internal class Variables
         weight = (weight / 0.45359237);
     }
 
-    static double ibToKg(double pounds = 5)
+    static double lbToKg(double pounds = 5)
     {
         return (pounds * 0.45359237);
     }
@@ -94,7 +155,6 @@ internal class Variables
         }
 
         int[] nums = new int[10];
-        int i = 0;
         while (i < nums.Length)
         {
             nums[i] = i;
@@ -322,27 +382,27 @@ internal class Variables
         Console.ReadKey();
     }
 
-    static void constant(string constant)
-    {
-        Console.Title = constant;
+    //static void constant(string constant)
+    //{
+    //    Console.Title = constant;
 
-        const double pi = 3.14159265358979;
-        var daysType = typeof(Days);
+    //    const double pi = 3.14159265358979;
+    //    var daysType = typeof(Days);
 
-        Console.WriteLine("Pi Type: " + pi.GetType());
-        Console.WriteLine("Circumference: " + (pi * 3));
-        Console.WriteLine("\nFirst Name: " + Days.Sat);
-        Console.WriteLine("1st Index: " + (int)Days.Sat);
+    //    Console.WriteLine("Pi Type: " + pi.GetType());
+    //    Console.WriteLine("Circumference: " + (pi * 3));
+    //    Console.WriteLine("\nFirst Name: " + Days.Sat);
+    //    Console.WriteLine("1st Index: " + (int)Days.Sat);
 
-        string name = Enum.GetName(daysType, 1);
+    //    string name = Enum.GetName(daysType, 1);
 
-        Console.WriteLine("\n2nd Index: " + name);
+    //    Console.WriteLine("\n2nd Index: " + name);
 
-        bool flag = Enum.IsDefined(daysType, "Mon");
+    //    bool flag = Enum.IsDefined(daysType, "Mon");
 
-        Console.WriteLine("Contains 'Mon'?: " + flag);
-        Console.ReadKey();
-    }
+    //    Console.WriteLine("Contains 'Mon'?: " + flag);
+    //    Console.ReadKey();
+    //}
 
     static void casts(string casts)
     {
