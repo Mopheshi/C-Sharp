@@ -26,31 +26,66 @@
 
 
 
+
         //Console.Title = "Refactor";
         //computeFactorials(1, 10);
 
 
-        Console.Title = "Features";
-        Console.WriteLine("Please type something: ");
-        string text = Console.ReadLine();
-        if (String.IsNullOrWhiteSpace(text))
-        {
-            Console.WriteLine("Error: No text found...");
-        }
-        else
-        {
-            Console.WriteLine("You typed: " + text);
-            Console.WriteLine(text + " has " + text.Length + " characters!");
-        }
+        //Console.Title = "Features";
+        //Console.WriteLine("Please type something: ");
+        //string text = Console.ReadLine();
+        //if (String.IsNullOrWhiteSpace(text))
+        //{
+        //    Console.WriteLine("Error: No text found...");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("You typed: " + text);
+        //    Console.WriteLine(text + " has " + text.Length + " characters!");
+        //}
 
-        string query = text.StartsWith("C#") ? " does " : " doesn't ";
-        Console.WriteLine("Text" + query + "start with C#.");
+        //string query = text.StartsWith("C#") ? " does " : " doesn't ";
+        //Console.WriteLine("Text" + query + "start with C#.");
 
-        query = text.EndsWith("steps") ? " does " : " doesn't ";
-        Console.WriteLine("Text" + query + "end with steps.");
+        //query = text.EndsWith("steps") ? " does " : " doesn't ";
+        //Console.WriteLine("Text" + query + "end with steps.");
 
-        query = text.Contains("easy") ? " does " : " doesn't ";
-        Console.WriteLine("Text" + query + "contains easy.");
+        //query = text.Contains("easy") ? " does " : " doesn't ";
+        //Console.WriteLine("Text" + query + "contains easy.");
+
+
+
+        //Console.Title = "Manipulate";
+
+        //Console.WriteLine("Please type something: ");
+
+        //string text = Console.ReadLine();
+        //string upper = text.ToUpper();
+        //string lower = text.ToLower();
+
+        //Console.WriteLine("You typed: " + text);
+        //Console.WriteLine(text + " has " + text.Length + " characters!");
+        //Console.WriteLine("\n" + text + " in uppercase is:\t" + upper);
+        //Console.WriteLine(text + " in lowercases is:\t" + lower);
+
+        //upper = upper.PadLeft(40);
+        //lower = lower.PadRight(40, '#');
+        //text = text.PadLeft(30, '*').PadRight(40, '*');
+
+        //Console.WriteLine("\nPadded Left:\t" + upper);
+        //Console.WriteLine("Padded Right:\t" + lower);
+        //Console.WriteLine("Padded Both:\t" + text);
+
+        //Console.WriteLine("\nTrimStart:\t" + upper.TrimStart());
+        //Console.WriteLine("TrimEnd:\t" + lower.TrimEnd('#'));
+        //Console.WriteLine("TrimBoth:\t" + text.Trim('*'));
+
+
+
+        Console.Title = "Joined";
+
+
+
 
 
         //Console.Title = "";
