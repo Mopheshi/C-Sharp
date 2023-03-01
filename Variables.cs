@@ -55,6 +55,7 @@
 
 
 
+
         //Console.Title = "Manipulate";
 
         //Console.WriteLine("Please type something: ");
@@ -82,14 +83,128 @@
 
 
 
-        Console.Title = "Joined";
 
+        //Console.Title = "Joined";
+
+        //string[] a = new string[] { "Alpha", "Bravo", "Charlie" };
+        //string s = String.Concat(a[0], a[1]);
+        //Console.WriteLine("Concatenated:\t" + s);
+
+        //s = String.Join(" ", a[0], a[1]);
+        //Console.WriteLine("Joined:\t\t" + s);
+
+        //s = String.Join("<b>", a);
+        //Console.WriteLine("\nHTML:\t\t" + s + "\n");
+
+        //int num = String.Compare(a[0], a[1]);
+        //Console.WriteLine(a[0] + " v " + a[1] + ":\t\t" + num);
+
+        //num = String.Compare(a[2], a[1]);
+        //Console.WriteLine(a[2] + " v " + a[1] + ":\t" + num);
+
+        //num = a[1].CompareTo(a[1]);
+        //Console.WriteLine(a[1] + " v " + a[1] + ":\t\t" + num + "\n");
+
+        //bool flag = a[0] == a[1];
+        //Console.WriteLine(a[0] + " == " + a[1] + ":\t\t" + flag);
+        //flag = (a[2].Equals(a[2]));
+        //Console.WriteLine(a[2] + " equals " + a[2] + ":\t" + flag);
+
+
+
+
+        //Console.Title = "Copied";
+
+        //string car1 = "Ghibli";
+        //string car2 = "GranTurismo";
+        //Console.WriteLine("Original:\nCar1: " + car1 + "\t\tCar2: " + car2);
+
+        //car1 = String.Copy(car2);
+        //Console.WriteLine("Copied:\nCar1: " + car1 + "\tCar2: " + car2);
+
+        //int num = car1.Length;
+        //char[] model = new char[num];
+        //car1.CopyTo(0, model, 0, num);
+        //Console.WriteLine("Character Array:");
+        //foreach (char c in model)
+        //{
+        //    Console.Write(c + " ");
+        //}
+
+        //car1 = car1.Remove(4);
+        //Console.WriteLine("\nRemoved...\tCar1:\t" + car1);
+
+        //car1 = car1.Insert(0, "Maserati");
+        //car1 = car1.Insert(12, "Cabrio");
+        //Console.WriteLine("Inserted...\tCar1:\t" + car1);
+
+        //car1 = car1.Replace("GranCabrio", "Quattroporte");
+        //Console.WriteLine("Replaced...\tCar1:\t" + car1);
+
+
+
+
+        //Console.Title = "Substring";
+
+        //string text = "My dog is a cute dog";
+        //Console.WriteLine("'" + text + "' has " + text.Length + " characters!");
+        //Console.Write("Please Enter A Substring To Seek: ");
+        //string sub = Console.ReadLine();
+
+        //char[] arr = new char[sub.Length];
+        //sub.CopyTo(0, arr, 0, sub.Length);
+        //int pos = text.IndexOf(sub);
+        //report(pos, sub);
+
+        //pos = text.IndexOfAny(arr);
+        //report(pos, text.Substring(pos, 1));
+
+        //pos = text.LastIndexOfAny(arr);
+        //report(pos, text.Substring(pos, 1));
+
+
+
+
+        Console.Title = "Format";
+
+        int sum = 2500;
+
+        Console.WriteLine("Currency String:\t" + sum.ToString("C"));
+        Console.WriteLine(String.Format("General:\t\t{0:G}", sum));
+        Console.WriteLine(String.Format("Fixed Point:\t\t{0:F}", sum));
+        Console.WriteLine(String.Format("Number:\t\t\t{0:N}", sum));
+        Console.WriteLine(String.Format("Currency:\t\t{0:C}", sum));
+
+        sum /= 1000;
+
+        Console.WriteLine(String.Format("Percentage:\t\t{0:P}", sum));
+        Console.WriteLine(String.Format("Zero Padded:\t\t{0:00.0000}", sum));
+
+        string data = "Mike,McGrath,Author";
+        string[] items = data.Split(',');
+
+        foreach (string item in items)
+        {
+            Console.Write(String.Format("{0} ", item));
+        }
 
 
 
 
         //Console.Title = "";
         //Console.ReadKey();
+    }
+
+    static void report(int pos, string sub)
+    {
+        if (pos != -1)
+        {
+            Console.WriteLine("'" + sub + "' found at position " + pos + "...");
+        }
+        else
+        {
+            Console.WriteLine("'" + sub + "' not found!");
+        }
     }
 
 
