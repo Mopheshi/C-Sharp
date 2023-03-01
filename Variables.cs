@@ -165,28 +165,53 @@
 
 
 
-        Console.Title = "Format";
+        //Console.Title = "Format";
 
-        int sum = 2500;
+        //int sum = 2500;
 
-        Console.WriteLine("Currency String:\t" + sum.ToString("C"));
-        Console.WriteLine(String.Format("General:\t\t{0:G}", sum));
-        Console.WriteLine(String.Format("Fixed Point:\t\t{0:F}", sum));
-        Console.WriteLine(String.Format("Number:\t\t\t{0:N}", sum));
-        Console.WriteLine(String.Format("Currency:\t\t{0:C}", sum));
+        //Console.WriteLine("Currency String:\t" + sum.ToString("C"));
+        //Console.WriteLine(String.Format("General:\t\t{0:G}", sum));
+        //Console.WriteLine(String.Format("Fixed Point:\t\t{0:F}", sum));
+        //Console.WriteLine(String.Format("Number:\t\t\t{0:N}", sum));
+        //Console.WriteLine(String.Format("Currency:\t\t{0:C}", sum));
 
-        sum /= 1000;
+        //sum /= 1000;
 
-        Console.WriteLine(String.Format("Percentage:\t\t{0:P}", sum));
-        Console.WriteLine(String.Format("Zero Padded:\t\t{0:00.0000}", sum));
+        //Console.WriteLine(String.Format("Percentage:\t\t{0:P}", sum));
+        //Console.WriteLine(String.Format("Zero Padded:\t\t{0:00.0000}", sum));
 
-        string data = "Mike,McGrath,Author";
-        string[] items = data.Split(',');
+        //string data = "Mike,McGrath,Author";
+        //string[] items = data.Split(',');
 
-        foreach (string item in items)
-        {
-            Console.Write(String.Format("{0} ", item));
-        }
+        //foreach (string item in items)
+        //{
+        //    Console.Write(String.Format("{0} ", item));
+        //}
+
+
+
+
+        Console.Title = "Date Format";
+
+        DateTime now = DateTime.Now;
+
+        Console.WriteLine("Current date and time:\t\t" + now.ToString());
+        Console.WriteLine("\nDay name:\t\t\t" + now.DayOfWeek.ToString());
+        Console.WriteLine("Date only:\t\t\t" + now.ToShortDateString().ToString());
+        Console.WriteLine("Time only:\t\t\t" + now.ToShortTimeString().ToString());
+
+        now = now.AddYears(4);
+
+        Console.WriteLine("\nFour-years long date from now:\t" + now.ToString("D"));
+        Console.WriteLine("Four-years time from now:\t" + now.ToString());
+
+        DateTime dateTime = new DateTime(2023, 3, 1, 2, 48, 12);
+        Console.WriteLine("\nSet long Date and Time:\t\t{0:F}", dateTime);
+        Console.WriteLine("Set Date and Time:\t\t{0:F}", dateTime.ToString());
+
+        Console.WriteLine("\nDay name:\t\t\t{0:dddd}", dateTime);
+        Console.WriteLine("Long time:\t\t\t{0:T}", dateTime);
+        Console.WriteLine("Long date:\t\t\t{0:D}", dateTime);
 
 
 
