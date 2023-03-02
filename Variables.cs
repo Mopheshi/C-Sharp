@@ -191,27 +191,32 @@
 
 
 
-        Console.Title = "Date Format";
+        //Console.Title = "Date Format";
 
-        DateTime now = DateTime.Now;
+        //DateTime now = DateTime.Now;
 
-        Console.WriteLine("Current date and time:\t\t" + now.ToString());
-        Console.WriteLine("\nDay name:\t\t\t" + now.DayOfWeek.ToString());
-        Console.WriteLine("Date only:\t\t\t" + now.ToShortDateString().ToString());
-        Console.WriteLine("Time only:\t\t\t" + now.ToShortTimeString().ToString());
+        //Console.WriteLine("Current date and time:\t\t" + now.ToString());
+        //Console.WriteLine("\nDay name:\t\t\t" + now.DayOfWeek.ToString());
+        //Console.WriteLine("Date only:\t\t\t" + now.ToShortDateString().ToString());
+        //Console.WriteLine("Time only:\t\t\t" + now.ToShortTimeString().ToString());
 
-        now = now.AddYears(4);
+        //now = now.AddYears(4);
 
-        Console.WriteLine("\nFour-years long date from now:\t" + now.ToString("D"));
-        Console.WriteLine("Four-years time from now:\t" + now.ToString());
+        //Console.WriteLine("\nFour-years long date from now:\t" + now.ToString("D"));
+        //Console.WriteLine("Four-years time from now:\t" + now.ToString());
 
-        DateTime dateTime = new DateTime(2023, 3, 1, 2, 48, 12);
-        Console.WriteLine("\nSet long Date and Time:\t\t{0:F}", dateTime);
-        Console.WriteLine("Set Date and Time:\t\t{0:F}", dateTime.ToString());
+        //DateTime dateTime = new DateTime(2023, 3, 1, 2, 48, 12);
+        //Console.WriteLine("\nSet long Date and Time:\t\t{0:F}", dateTime);
+        //Console.WriteLine("Set Date and Time:\t\t{0:F}", dateTime.ToString());
 
-        Console.WriteLine("\nDay name:\t\t\t{0:dddd}", dateTime);
-        Console.WriteLine("Long time:\t\t\t{0:T}", dateTime);
-        Console.WriteLine("Long date:\t\t\t{0:D}", dateTime);
+        //Console.WriteLine("\nDay name:\t\t\t{0:dddd}", dateTime);
+        //Console.WriteLine("Long time:\t\t\t{0:T}", dateTime);
+        //Console.WriteLine("Long date:\t\t\t{0:D}", dateTime);
+
+
+
+
+        Console.Title = "Write Text";
 
 
 
