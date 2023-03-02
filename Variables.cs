@@ -216,8 +216,64 @@
 
 
 
-        Console.Title = "Write Text";
+        //Console.Title = "Write Text";
 
+        //string path = "C:\\Users\\MOPHE\\Desktop\\poem.txt";
+        //string poem = "\r\n\tI never saw a man who looked";
+        //poem += "\r\n\tWith such a wistful eye";
+        //poem += "\r\n\tUpon that little tent of blue";
+        //poem += "\r\n\tWhich prisoners call the sky";
+
+        //if (File.Exists(path))
+        //{
+        //    Console.WriteLine("File already exists!");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("File doesn't exist!");
+        //}
+
+        //try
+        //{
+        //    File.WriteAllText(path, poem);
+        //    Console.WriteLine("File written to: " + path);
+        //}
+        //catch (Exception e)
+        //{
+        //    Console.WriteLine($"Error: {e.Message}");
+        //}
+
+
+
+
+        Console.Title = "Append Text";
+
+        string path = "C:\\Users\\MOPHE\\Desktop\\oscar.txt";
+        string[] poem = new string[] { "In Debtors' Yard the stones are hard", "And the dripping wall is high" };
+        string attrib = "The Ballad Of Reading Gaol ";
+        attrib += "(Oscar Wilde 1898)";
+
+        if (File.Exists(path))
+        {
+            Console.WriteLine("File already exists!");
+        }
+        else
+        {
+            Console.WriteLine("File doesn't exist!");
+        }
+
+        File.AppendAllText(path, attrib);
+        Console.WriteLine("Appended to: ", path);
+
+        try
+        {
+            File.WriteAllLines(path, poem);
+            Console.WriteLine("File written to: " + path);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error: {e.Message}");
+        }
 
 
 
