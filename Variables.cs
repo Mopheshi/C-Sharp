@@ -246,34 +246,109 @@
 
 
 
-        Console.Title = "Append Text";
+        //Console.Title = "Append Text";
 
-        string path = "C:\\Users\\MOPHE\\Desktop\\oscar.txt";
-        string[] poem = new string[] { "In Debtors' Yard the stones are hard", "And the dripping wall is high" };
-        string attrib = "The Ballad Of Reading Gaol ";
-        attrib += "(Oscar Wilde 1898)";
+        //string path = "C:\\Users\\MOPHE\\Desktop\\oscar.txt";
+        //string[] poem = new string[] { "In Debtors' Yard the stones are hard", "And the dripping wall is high" };
+        //string attrib = "The Ballad Of Reading Gaol ";
+        //attrib += "(Oscar Wilde 1898)";
 
-        if (File.Exists(path))
-        {
-            Console.WriteLine("File already exists!");
-        }
-        else
-        {
-            Console.WriteLine("File doesn't exist!");
-        }
+        //if (File.Exists(path))
+        //{
+        //    Console.WriteLine("File already exists!");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("File doesn't exist!");
+        //}
 
-        File.AppendAllText(path, attrib);
-        Console.WriteLine("Appended to: ", path);
+        //File.AppendAllText(path, attrib);
+        //Console.WriteLine("Appended to: " + path);
 
-        try
-        {
-            File.WriteAllLines(path, poem);
-            Console.WriteLine("File written to: " + path);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Error: {e.Message}");
-        }
+        //try
+        //{
+        //    File.WriteAllLines(path, poem);
+        //    Console.WriteLine("File written to: " + path);
+        //}
+        //catch (Exception e)
+        //{
+        //    Console.WriteLine($"Error: {e.Message}");
+        //}
+
+
+
+
+        //Console.Title = "Read Text";
+
+        //string path = "C:\\Users\\MOPHE\\Desktop\\oscar.txt";
+        //string text = File.ReadAllText(path);
+
+        //Console.WriteLine("File Read: " + path);
+        //Console.WriteLine(text + "\n");
+
+        //if (File.Exists(path))
+        //{
+        //    Console.WriteLine("File found at " + path);
+        //}
+        //else
+        //{
+        //    Console.WriteLine("File not found at " + path);
+        //}
+
+        //string[] lines = File.ReadAllLines(path);
+        //int num = 1;
+
+        //try
+        //{
+        //    foreach (string line in lines)
+        //    {
+        //        Console.WriteLine(num + ".\t" + line);
+        //        num++;
+        //    }
+        //}
+        //catch (Exception ex)
+        //{
+        //    Console.WriteLine($"Error {ex.Message}");
+        //}
+
+
+
+
+        //Console.Title = "Write Stream";
+
+        //string path = "C:\\Users\\MOPHE\\Desktop\\oscar.txt";
+        //string[] poem = new string[] { "\tThis truth finds honest Tam o' Shanter",
+        //    "\tAs he from Ayr one night did canter" ,
+        //    "\tOld Ayr, which never a town surpasses" ,
+        //    "\tFor honest men and bonnie lasses." };
+        //string attrib = "\r\n\tTam O’Shanter(Robert Burns 1790)";
+
+        //try
+        //{
+        //    using (StreamWriter streamWriter = new StreamWriter(path))
+        //    {
+        //        foreach (string line in poem)
+        //        {
+        //            streamWriter.WriteLine(line);
+        //        }
+        //        Console.WriteLine("Poem ritten successfully to " + path);
+        //    }
+
+        //    using (StreamWriter writer = new StreamWriter(path, true))
+        //    {
+        //        writer.WriteLine(attrib);
+        //        Console.WriteLine("Attribute appended successfully to " + path);
+        //    }
+        //}
+        //catch (Exception error) { Console.WriteLine(error.Message); }
+
+
+
+
+        Console.Title = "Read Stream";
+
+
+
 
 
 
