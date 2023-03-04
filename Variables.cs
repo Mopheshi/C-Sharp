@@ -347,7 +347,32 @@
 
         Console.Title = "Read Stream";
 
+        //string path = "C:\\Users\\MOPHE\\source\\Repo\\C Sharp\\TopFive.csv";
+        //string path = "C:/Users/MOPHE/source/Repo/C Sharp/TopFive.csv";
+        string path = "C:\\Users\\MOPHE\\Desktop\\TopFive.csv";
 
+        try
+        {
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    if (line.IndexOf("Rank") != -1)
+                        line = line.ToUpper();
+                    if (line.IndexOf("Dreamville") != -1)
+                        line += " ft. Ari Lenox";
+
+                    string[] sub = line.Split(',');
+                    line = String.Format("{0,-10}{1,-30}{2,-20}", sub[0], sub[1], sub[2]);
+                    Console.WriteLine(line);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
 
 
 
