@@ -379,13 +379,52 @@
 
         Console.Title = "Debug";
 
-        int pass = 0;
-        int unit = 2;
-        for (int i = 0; i < 3; i++)
+        //int pass = 0;
+        //int unit = 2;
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    pass = (pass + 1);
+        //    unit = sqaure(unit);
+        //    Console.WriteLine(pass + ". " + unit);
+        //}
+
+        //int i, j, k;
+        //int pass = 0;
+
+        //for (i = 0; i < 4; i++)
+        //{
+        //    //    pass++;
+        //    //    Console.WriteLine(pass);
+        //    for (j = 0; j < 4; j++)
+        //    {
+        //        //pass++;
+        //        //Console.WriteLine(pass);
+        //        for (k = 0; k < 4; k++)
+        //        {
+        //            pass++;
+        //            Console.WriteLine(pass);
+        //        }
+        //    }
+        //}
+
+        try
         {
-            pass = (pass + 1);
-            unit = sqaure(unit);
-            Console.WriteLine(pass + ". " + unit);
+            Console.WriteLine("Please enter 1st number: ");
+            double x = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine("Please enter 1st number: ");
+            double y = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine(x + " + " + y + " = " + (x + y));
+        }
+        catch (OverflowException e)
+        {
+            Console.WriteLine("\n" + e.Message + "\nMaximum value acceptable = " + Int16.MaxValue + "\nMinimum value acceptable = " +
+                Int16.MinValue);
+        }
+        catch (Exception error)
+        {
+            Console.WriteLine("\n" + error.Message);
         }
 
 
