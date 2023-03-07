@@ -1,15 +1,13 @@
-﻿public class Dog
+﻿public class Cat
 {
     private string name, color;
     private int age;
 
-    public Dog() { }
-
-    public Dog(string name, string color, int age)
+    public Cat()
     {
-        this.name = name;
-        this.color = color;
-        this.age = age;
+        name = "Tiger";
+        color = "black";
+        age = 3;
     }
 
     public void setName(string name)
@@ -42,8 +40,8 @@
         return age;
     }
 
-    public string bark()
+    public string cry()
     {
-        return ("\nWoof.!, woof..!!, woof...!!!\n");
+        return ("\nMeow.!, Meow..!!\n");
     }
 }

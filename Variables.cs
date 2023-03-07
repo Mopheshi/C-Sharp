@@ -432,6 +432,31 @@
 
         Console.Title = "Objects";
 
+        //Dog dog = new Dog();
+        Dog doggy = new("Doggy", "brown", 2);
+        Dog bitch = new("Bitch", "grey", 1);
+
+        string d = String.Format("{0} is a {1}-year-old {2} dog...{3}", doggy.getName(), doggy.getAge(), doggy.getColor(), doggy.bark());
+        string b = String.Format("{0} is a {1}-year-old {2} dog...{3}", bitch.getName(), bitch.getAge(), bitch.getColor(), bitch.bark());
+
+        Console.WriteLine(d);
+        Console.WriteLine(b);
+
+        Console.WriteLine("\n\n");
+
+        Cat kitty = new();
+        Cat smokey = new();
+
+        smokey.setName("Smokey");
+        smokey.setAge(2);
+        smokey.setColor("white");
+
+        string k = String.Format("{0} is a {1}-year-old {2} cat...{3}", kitty.getName(), kitty.getAge(), kitty.getColor(), kitty.cry());
+        string s = String.Format("{0} is a {1}-year-old {2} cat...{3}", smokey.getName(), smokey.getAge(), smokey.getColor(), smokey.cry());
+
+        Console.WriteLine(k);
+        Console.WriteLine(s);
+
 
 
 
