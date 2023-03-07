@@ -377,7 +377,7 @@
 
 
 
-        Console.Title = "Debug";
+        //Console.Title = "Debug";
 
         //int pass = 0;
         //int unit = 2;
@@ -407,25 +407,30 @@
         //    }
         //}
 
-        try
-        {
-            Console.WriteLine("Please enter 1st number: ");
-            double x = Convert.ToInt16(Console.ReadLine());
+        //try
+        //{
+        //    Console.WriteLine("Please enter 1st number: ");
+        //    double x = Convert.ToInt16(Console.ReadLine());
 
-            Console.WriteLine("Please enter 1st number: ");
-            double y = Convert.ToInt16(Console.ReadLine());
+        //    Console.WriteLine("Please enter 1st number: ");
+        //    double y = Convert.ToInt16(Console.ReadLine());
 
-            Console.WriteLine(x + " + " + y + " = " + (x + y));
-        }
-        catch (OverflowException e)
-        {
-            Console.WriteLine("\n" + e.Message + "\nMaximum value acceptable = " + Int16.MaxValue + "\nMinimum value acceptable = " +
-                Int16.MinValue);
-        }
-        catch (Exception error)
-        {
-            Console.WriteLine("\n" + error.Message);
-        }
+        //    Console.WriteLine(x + " + " + y + " = " + (x + y));
+        //}
+        //catch (OverflowException e)
+        //{
+        //    Console.WriteLine("\n" + e.Message + "\nMaximum value acceptable = " + Int16.MaxValue + "\nMinimum value acceptable = " +
+        //        Int16.MinValue);
+        //}
+        //catch (Exception error)
+        //{
+        //    Console.WriteLine("\n" + error.Message);
+        //}
+
+
+
+
+        Console.Title = "Objects";
 
 
 
