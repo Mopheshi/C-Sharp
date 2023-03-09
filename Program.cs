@@ -473,19 +473,49 @@
 
 
 
-        Console.Title = "Calling Base Constructors";
+        //Console.Title = "Calling Base Constructors";
 
-        //Parent ada = new();
-        //Parent ama = new(50);
-        Daughter anna = new();
-        Son brad = new();
-        Son carl = new(10);
+        ////Parent ada = new();
+        ////Parent ama = new(50);
+        //Daughter anna = new();
+        //Son brad = new();
+        //Son carl = new(10);
+
+
+
+
+        //Console.Title = "Hiding Base Methods";
+
+        //Man henry = new();
+        //Hombre enrique = new();
+
+        //henry.Speak();
+        //henry.Speak("It's a beautiful evening...");
+        //enrique.Speak("Hola!");
+        //((Man)enrique).Speak("Es una tarde hermosa");
+
+
+
+
+        Console.Title = "Directing Method Calls";
+
+        Pigeon pigeon = new();
+        Chicken chicken = new();
+
+        describe(pigeon);
+        describe(chicken);
 
 
 
 
         //Console.Title = "";
         //Console.ReadKey();
+    }
+
+    static void describe(Bird bird)
+    {
+        bird.Talk();
+        bird.Fly();
     }
 
     static int sqaure(int num)
