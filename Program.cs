@@ -497,20 +497,47 @@
 
 
 
-        Console.Title = "Directing Method Calls";
+        //Console.Title = "Directing Method Calls";
 
-        Pigeon pigeon = new();
-        Chicken chicken = new();
+        //Pigeon pigeon = new();
+        //Chicken chicken = new();
 
-        describe(pigeon);
-        describe(chicken);
+        //describe(pigeon);
+        //describe(chicken);
 
+
+
+
+        //Console.Title = "Providing Capability Classes";
+
+        //Pigeons joey = new();
+        //Chickens lola = new();
+        //Caller caller = new();
+
+        //caller.describe(joey);
+        //caller.describe(lola);
+
+
+
+
+        Console.Title = "Employing Partial Classes";
+
+        Sailboat sailboat = new Sailboat("Laser", "Classic");
+        sailboat.describe();
 
 
 
         //Console.Title = "";
         //Console.ReadKey();
     }
+
+    /*This method I think, is supposed to be here but it keeps flagging errors, perhaps I am right to comment it out...*/
+    //public partial class Sailboat
+    //{        public void describe()
+    //    {
+    //        Console.WriteLine("Sailboat: {0} {1}", make, model);
+    //    }
+    //}
 
     static void describe(Bird bird)
     {
