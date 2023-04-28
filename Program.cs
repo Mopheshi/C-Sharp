@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using C_Sharp;
+
+internal class Program
 {
     //enum Days { Sat, Sun, Mon, Tue, Wed, Thur, Fri }
 
@@ -520,16 +522,74 @@
 
 
 
-        Console.Title = "Employing Partial Classes";
+        //Console.Title = "Employing Partial Classes";
+        //Sailboat sailboat = new Sailboat("Laser", "Classic");
+        //sailboat.describe();
 
-        Sailboat sailboat = new Sailboat("Laser", "Classic");
-        sailboat.describe();
+
+
+
+        Console.Title = "Breadth First Search";
+
+        Graph g = new Graph(4);
+        g.AddEdge(0, 1);
+        g.AddEdge(0, 2);
+        g.AddEdge(1, 2);
+        g.AddEdge(2, 0);
+        g.AddEdge(2, 3);
+        g.AddEdge(3, 3);
+
+        Console.WriteLine("Breadth First Search (starting from vertex 1)");
+
+        g.BreadthFirstSearch(1);
 
 
 
         //Console.Title = "";
         //Console.ReadKey();
     }
+
+    /// <summary>
+    /// @author Chatbot AI
+    /// @author Mopheshi
+    /// 
+    ///   This implementation uses a list called 'visited' to keep track of nodes that have already been visited,
+    ///   and a queue to keep track of nodes that still need to be visited.The function takes two parameters:
+    ///   the adjacency list 'adjList' (a dictionary where the keys are nodes and the values are lists of their
+    ///   neighbors), and the 'startNode' where the search will begin.
+    ///   The function starts by initializing the 'visited' list with the 'startNode' and adding it to the
+    ///   'queue'. Then, while there are still nodes in the 'queue', the function dequeues the next node, loops
+    ///   through its neighbors, and adds them to the 'visited' list and the 'queue' if they haven't already
+    ///   been visited.
+    ///   
+    ///   Finally, the function returns the 'visited` list' which should contain all the nodes visited in the
+    /// This implementation uses a list called 'visited' to keep track of nodes that have already been visited.
+    /// </summary>
+    /// <param name="adjList"></param>
+    /// <param name="startNode"></param>
+    /// <returns></returns>Dictionary<int, List<int>> adjList, int startNode
+    public static List<int> BreadthFirstSearch(Dictionary<int, List<int>> adjList, int startNode)
+    {
+        List<int> visited = new List<int>();
+        Queue<int> queue = new Queue<int>();
+        visited.Add(startNode);
+        queue.Enqueue(startNode);
+        while (queue.Count > 0)
+        {
+            int node = queue.Dequeue();
+            foreach (int neighbor in adjList[node])
+            {
+                if (!visited.Contains(neighbor))
+                {
+                    visited.Add(neighbor);
+                    queue.Enqueue(neighbor);
+                }
+            }
+        }
+
+        return visited;
+    }
+
 
     /*This method I think, is supposed to be here but it keeps flagging errors, perhaps I am right to comment it out...*/
     //public partial class Sailboat
@@ -979,7 +1039,7 @@
 
         Console.Write("Please type your name: ");
 
-        String name = Console.ReadLine();
+        string name = Console.ReadLine();
 
         Console.WriteLine("Welcome " + name + "!");
         Console.ReadKey();
