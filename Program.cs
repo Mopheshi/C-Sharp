@@ -1,6 +1,4 @@
-﻿using C_Sharp;
-
-internal class Program
+﻿internal class Program
 {
     //enum Days { Sat, Sun, Mon, Tue, Wed, Thur, Fri }
 
@@ -529,24 +527,108 @@ internal class Program
 
 
 
-        Console.Title = "Breadth First Search";
+        //Console.Title = "Breadth First Search";
 
-        Graph g = new Graph(4);
-        g.AddEdge(0, 1);
-        g.AddEdge(0, 2);
-        g.AddEdge(1, 2);
-        g.AddEdge(2, 0);
-        g.AddEdge(2, 3);
-        g.AddEdge(3, 3);
+        //Graph g = new Graph(4);
+        //g.AddEdge(0, 1);
+        //g.AddEdge(0, 2);
+        //g.AddEdge(1, 2);
+        //g.AddEdge(2, 0);
+        //g.AddEdge(2, 3);
+        //g.AddEdge(3, 3);
 
-        Console.WriteLine("Breadth First Search (starting from vertex 1)");
+        //Console.WriteLine("Breadth First Search (starting from vertex 1)");
 
-        g.BreadthFirstSearch(1);
+        //g.BreadthFirstSearch(1);
+
+
+
+
+        Console.Title = "Topological Sort";
+
+        /// A--->B--->D<--->E
+        /// ^         |
+        /// |         v
+        /// + --------C
+
+        var adjList = new Dictionary<string, List<string>>
+        {
+            {"A", new List<string>{"B"}},
+            {"B", new List<string>{"D", "C"}},
+            {"C", new List<string>{"D"}},
+            {"D", new List<string>{"E"}},
+            {"E", new List<string>{"D"}}
+        };
+
+        Console.WriteLine(TopologicalSort(adjList));
 
 
 
         //Console.Title = "";
         //Console.ReadKey();
+    }
+
+    /// <summary>
+    /// Topological Sort Algorithm:
+    /// </summary>
+    /// <param name="adjList"></param>
+    /// <returns name="sortedList"></returns>
+    /// <exception cref="ArgumentException"></exception>
+
+    ///     1. Initialize a dictionary 'inDegree' to count the number of incoming edges for each node,
+    ///         and set it initially to 0 for all nodes.
+    ///     2. Traverse the adjacency list to update the 'inDegree' of each node. For each neighbor of a
+    ///         node, increment its 'inDegree' by 1.
+    ///     3. Initialize a queue to store nodes with 'inDegree' 0 (i.e., no incoming edges).
+    ///         Add all such nodes to the queue.
+    ///     4. While the queue is not empty, remove a node from the front of the queue, add it to the
+    ///         sorted list, and decrement the 'inDegree' of its neighbors. If a neighbor has
+    ///         'inDegree' 0 after the decrement, add it to the queue.
+    ///     5. After the loop, if the length of the sorted list is less than the number of nodes, the graph has at least one cycle and the function throws an `ArgumentException`.
+
+    /// The time complexity of the algorithm is O(V+E), where V is the number of nodes and E is the
+    /// number of edges, since each node and edge is visited once.
+    public static List<string> TopologicalSort(Dictionary<string, List<string>> adjList)
+    {
+        // count incoming edges for each node
+        Dictionary<string, int> inDegree = adjList.Keys.ToDictionary(v => v, v => 0);
+        foreach (var neighbors in adjList.Values)
+        {
+            foreach (var v in neighbors)
+            {
+                inDegree[v]++;
+            }
+        }
+
+        // use a queue to store nodes with in-degree 0
+        Queue<string> queue = new Queue<string>(inDegree.Where(kv => kv.Value == 0).Select(kv => kv.Key));
+        List<string> sortedList = new List<string>();
+
+        while (queue.Count > 0)
+        {
+            // remove a node with in-degree 0 from the queue
+            string v = queue.Dequeue();
+            sortedList.Add(v);
+
+            // update in-degree of neighbors
+            foreach (var neighbor in adjList[v])
+            {
+                inDegree[neighbor]--;
+                // if a neighbor has no more incoming edges, add it to the queue
+                if (inDegree[neighbor] == 0)
+                {
+                    queue.Enqueue(neighbor);
+                }
+            }
+        }
+
+        // check if the graph has cycles (i.e., there are nodes with positive in-degree)
+        if (sortedList.Count != adjList.Count)
+        {
+            throw new ArgumentException("Graph has at least one cycle.");
+        }
+
+        return sortedList;
     }
 
     /// <summary>
