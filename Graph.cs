@@ -1,9 +1,9 @@
 ﻿namespace C_Sharp
 {
+    // We define a 'Graph' class that represents a directed graph using an adjacency list.
     internal class Graph
     {
         /**
-         * @author ChatGPT
          * @author Mopheshi
          * 
          * This implementation assumes that the graph is represented using adjacency lists.
@@ -29,11 +29,13 @@
             }
         }
 
+        // Adds an edge between two vertices.
         public void AddEdge(int v, int w)
         {
             adj[v].Add(w);
         }
 
+        // Performs BFS
         public void BreadthFirstSearch(int s)
         {
             bool[] visited = new bool[V];
@@ -56,6 +58,39 @@
                     }
                 }
             }
+        }
+
+        public int[] TopologicalSort()
+        {
+            Stack<int> stack = new Stack<int>();
+            bool[] visited = new bool[V];
+
+            for (int i = 0; i < V; i++)
+            {
+                if (!visited[i])
+                {
+                    DFS(i, visited, stack);
+                }
+            }
+
+            int[] result = stack.ToArray();
+            Array.Reverse(result);
+            return result;
+        }
+
+        private void DFS(int v, bool[] visited, Stack<int> stack)
+        {
+            visited[v] = true;
+
+            foreach (int neighbour in adj[v])
+            {
+                if (!visited[neighbour])
+                {
+                    DFS(neighbour, visited, stack);
+                }
+            }
+
+            stack.Push(v);
         }
     }
 }
