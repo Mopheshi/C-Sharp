@@ -1,6 +1,4 @@
-﻿using C_Sharp;
-
-internal class Program
+﻿internal class Program
 {
     //enum Days { Sat, Sun, Mon, Tue, Wed, Thur, Fri }
 
@@ -546,22 +544,47 @@ internal class Program
 
 
 
-        Console.Title = "Topological Sort";
+        //Console.Title = "Topological Sort";
 
         // Create an instance of the 'Graph' class and add some edges to represent a sample graph.
         // We then call the 'TopologicalSort' method and print the result, which represents the topological
         // order of the vertices.
-        Graph graph = new Graph(6);
-        graph.AddEdge(0, 1);
-        graph.AddEdge(0, 2);
-        graph.AddEdge(1, 3);
-        graph.AddEdge(2, 3);
-        graph.AddEdge(2, 4);
-        graph.AddEdge(3, 5);
-        graph.AddEdge(4, 5);
+        //Graph graph = new Graph(6);
+        //graph.AddEdge(0, 1);
+        //graph.AddEdge(0, 2);
+        //graph.AddEdge(1, 3);
+        //graph.AddEdge(2, 3);
+        //graph.AddEdge(2, 4);
+        //graph.AddEdge(3, 5);
+        //graph.AddEdge(4, 5);
 
-        int[] result = graph.TopologicalSort();
-        Console.WriteLine(string.Join(" ", result));
+        //int[] result = graph.TopologicalSort();
+        //Console.WriteLine(string.Join(" ", result));
+
+
+
+        Console.Title = "Graduation Iteration Process";
+
+        Console.Write("Type in your current academic level: ");
+
+        int level = Convert.ToInt16(Console.ReadLine());
+        bool graduated = false;
+
+        while (level <= 500)
+        {
+            Console.WriteLine(level);
+            level += 100;
+        }
+
+        if (level > 500)
+        {
+            graduated = true;
+        }
+
+        if (graduated)
+        {
+            Console.WriteLine("Yay! You have graduated... 🎓🏅🎊");
+        }
 
 
 
